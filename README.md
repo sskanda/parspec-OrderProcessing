@@ -51,21 +51,29 @@ POST http://localhost:8080/api/orders :
         ![Image](https://github.com/user-attachments/assets/a411832b-9896-444d-9891-dd98d28d128e)
 
 ### 2) Get Order Status : 
+
  GET /api/orders/{order_id} :
+ 
      ![Image](https://github.com/user-attachments/assets/123f80bd-ae68-4bbb-8a79-efd1a8205567)
 
  Invalid orders : 
+ 
       ![Image](https://github.com/user-attachments/assets/5f133a62-7a9c-4192-af2d-2b0cd317f01f)
 
 ### 3) Get Metrics : 
+
  GET http://localhost:8080/api/metrics : 
+ 
        ![Image](https://github.com/user-attachments/assets/8858fc85-8c0a-432d-ac60-3d429f07ced1)
 
 ### 4) Simulate N number of concurrent orders (have also written Junit to simulate 1000 concurrent orders but have exposed an endpoint for placing N concurrent orders) :
+
   POST : http//localhost:8080/api/test/concurent-orders?count={N}
+  
         ![Image](https://github.com/user-attachments/assets/d062b830-b9c6-47e3-9750-8c951dbe6cd9)
 
   Logging on server asynchronously after placing the order :
+  
         ![Image](https://github.com/user-attachments/assets/dd4d2e09-8941-4dff-82a9-87b2008e62ef)
 
 
