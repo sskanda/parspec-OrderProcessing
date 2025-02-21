@@ -1,0 +1,16 @@
+﻿SQL Scripts : 
+
+
+CREATE TABLE orders ( order_id UUID PRIMARY KEY DEFAULT gen_random_uuid(), user_id UUID NOT NULL, item_ids TEXT NOT NULL, total_amount DECIMAL(10,2) NOT NULL, status VARCHAR(20) CHECK (status IN ('PENDING', 'PROCESSING', 'COMPLETED')) NOT NULL );
+
+
+Explanation:
+* order_id: UUID (auto-generated) as primary key
+* user_id: UUID of the user placing the order
+* item_ids: Comma-separated list of item IDs
+* total_amount: Decimal type for monetary values
+* status: Enforces only PENDING, PROCESSING, or COMPLETED
+
+
+Sample Data Insertion
+INSERT INTO orders (user_id, item_ids, total_amount, status) VALUES ('550e8400-e29b-41d4-a716-446655440000', 'item1,item2', 99.99, 'PENDING'), ('123e4567-e89b-12d3-a456-426614174000', 'item3,item4', 149.50, 'PROCESSING'), ('987f6abc-d45e-22d1-b456-426614174111', 'item5', 50.00, 'COMPLETED');
